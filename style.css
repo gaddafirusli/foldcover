@@ -1,0 +1,351 @@
+/* BASE */
+
+body{
+	background:#333333;
+	font: 13px/17px "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
+	color: #666;
+}
+a{
+	color:#777;
+}
+#box{
+	width: 280px;
+	height: 299px;
+	background: #232323;
+	margin: 70px auto;
+	position: relative;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	perspective: 700px;
+	-moz-perspective: 700px;
+	-webkit-perspective: 700px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.8) inset,0 1px 0 rgba(255,255,255,0.07);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.8) inset,0 1px 0 rgba(255,255,255,0.07);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8) inset,0 1px 0 rgba(255,255,255,0.07);
+ 
+}
+
+/* Drop shadow for the cover before hover */
+
+.flipshadow{
+	 width: 280px;
+	 height: 300px;
+	 position: absolute;
+	 right: 0;
+	 top:0;
+	 border-radius: 5px;
+	 -moz-border-radius: 5px;
+	 -webkit-border-radius: 5px;	 
+	 box-shadow: 0 0 5px rgba(0,0,0,0.9);
+	 -moz-box-shadow: 0 0 5px rgba(0,0,0,0.9);
+	 -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.9);
+	 transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+	 -moz-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+ 	 -webkit-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+}
+
+/* Extra gradient for the cover before hover */
+
+.flipgradient{
+	width: 280px;
+	height: 300px;
+	position: absolute;
+	right: 0;
+	top:0;
+	opacity: 0.3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+	-moz-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+ 	-webkit-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);		
+	background: #588401;
+	background: -moz-linear-gradient(65deg,  #3D5D00 0%, #89D002 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#3D5D00), color-stop(100%,#89D002));
+	background: -webkit-linear-gradient(65deg,  #3D5D00 0%,#89D002 100%);
+	background: linear-gradient(65deg,  #3D5D00 0%,#89D002 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D5D00', endColorstr='#89D002',GradientType=1 );
+}
+ 
+ 
+/* Stuff behind the cover */
+ 
+.link{
+	margin: 20px 0 0 20px;
+	list-style: none;
+	float: left;
+	padding: 0;
+	background: #1D1D1D;
+	width: 60px;
+	overflow: hidden;
+	border: 1px solid #161616;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.02);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.02); 
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.02);
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;	
+}
+
+.link li a{
+	width: 60px;
+	height: 63px;
+	display: block;
+ 	border-bottom: 1px solid #161616;
+	text-indent: -9999px;
+	background: url("icons.png") no-repeat center;
+}
+
+.link li a:hover{
+	background-color: rgba(0,0,0,0.15);
+}
+
+.link li a.tw{
+	background-position: 18px 22px;
+}
+
+.link li a.dr{
+	background-position: -157px 19px;
+}
+
+.link li a.fb{
+	background-position: -70px 19px;
+}
+
+.link li a.gr{
+	background-position: -250px 19px;
+}
+
+.link li:last-child a{
+	border-bottom: 0;
+}
+ 
+ 
+/* Each folded section for the cover */
+ 
+.flip{
+	position: absolute;
+	top:0px;
+	right:0;
+	height: 300px;
+	width: 40px;
+	background: #669900;
+	transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+	-moz-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+	-webkit-transition: all 0.4s cubic-bezier(0.065, 0.35, 0.01, 1);
+}
+
+.flip.right{
+	transform-origin:top right;
+	-moz-transform-origin:top right;
+ 	-webkit-transform-origin:top right;
+}
+
+.flip.left{
+	transform-origin:top left;
+	-moz-transform-origin:top left;
+	-webkit-transform-origin:top left;
+}
+
+
+/* Gradient element on each folded section */
+
+.flip span{
+	display: block;
+	height: 298px;
+	width: 40px;	
+	background: #669900;
+	-webkit-transition: background 0.485s linear 0;
+	-moz-transition: background 0.485s linear;
+	transition: background 0.485s linear;	
+	border: 1px solid rgba(255,255,255,0.3);
+}
+
+.flip.one span{
+	border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	-webkit-border-radius: 0 5px 5px 0;
+	border-left: 0;
+	width: 39px;
+}
+
+.flip.seven span{
+	border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;
+	border-right: 0;
+	width: 39px;
+}
+
+.flip.two span,
+.flip.three span,
+.flip.four span,
+.flip.five span,
+.flip.six span{
+	border-left: 0;
+	border-right: 0;
+}
+
+
+/* The image on the cover, positioned differently on the folded section */
+
+.flip em{
+	display: block;
+	height: 300px;
+	width: 40px;
+	background: url("o.png") no-repeat center left;
+	position: absolute;
+	top:0;
+}
+
+.flip.two em{
+	background-position:  -143px center ;
+}
+
+.flip.three em{
+	background-position:  -103px center  ;
+}
+
+.flip.four em{
+	background-position: -63px center;
+}
+
+.flip.five em{
+	background-position: -23px center;
+}
+
+.flip.six em{
+	background-position: 17px center;
+}
+
+
+
+
+/* The position of each folded section */
+
+.flip.one{
+	border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	-webkit-border-radius: 0 5px 5px 0;
+}
+ 
+.flip.two{
+	right:40px;	
+}
+
+.flip.three{
+	right:80px;	
+}
+
+.flip.four{
+	right:120px;	
+}
+
+.flip.five{
+	right:160px;	
+}
+
+.flip.six{
+	right:200px;	
+}
+
+.flip.seven{
+	right:240px;
+ 	border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;	
+}
+
+ 
+/* The position of each folded section - on hover */
+ 
+#box:hover .flip.two {
+	right: 11px;
+}
+
+#box:hover .flip.three {
+	right: 51px;
+}
+
+#box:hover .flip.four {
+	right: 62px;	 
+}
+
+#box:hover .flip.five {
+	right: 101px;
+}
+
+#box:hover .flip.six {
+	right: 112px;
+}
+
+#box:hover .flip.seven {
+	right: 152px;	 
+}
+ 
+
+ 
+
+/* Changes on size and stuff - on hover */
+
+#box:hover .flipshadow{
+	width:180px;
+	box-shadow: -3px 0 7px rgba(0,0,0,0.8);
+	-moz-box-shadow: -3px 0 7px rgba(0,0,0,0.8);
+	-webkit-box-shadow: -3px 7 5px rgba(0,0,0,0.8);	
+}
+
+#box:hover .flipgradient{
+	width:180px;
+	opacity: 0; 
+} 
+
+#box:hover .flip em{
+	opacity: 0.75;
+}
+
+#box:hover .flip.right{
+	-webkit-transform: rotateY(50deg);
+	-moz-transform: rotateY(50deg);
+	background: #7ab801;
+}
+
+#box:hover .flip.right.one span{
+	background:#6BA101;
+}
+
+#box:hover .flip.right span{
+	background: -moz-linear-gradient(left, #7ab801 0%, #5c8901 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7ab801), color-stop(100%,#5c8901));
+	background: -webkit-linear-gradient(left, #7ab801 0%,#5c8901 100%);
+	background: -o-linear-gradient(left, #7ab801 0%,#5c8901 100%);
+	background: -ms-linear-gradient(left, #7ab801 0%,#5c8901 100%);
+	background: linear-gradient(to right, #7ab801 0%,#5c8901 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ab801', endColorstr='#5c8901',GradientType=1 );
+}
+
+#box:hover .flip.left{
+	-webkit-transform: rotateY(-50deg);
+	-moz-transform: rotateY(-50deg);
+	background: #517802;
+}
+
+#box:hover .flip.left span{
+	background: -moz-linear-gradient(left, #517802 0%, #5c8901 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#517802), color-stop(100%,#5c8901));
+	background: -webkit-linear-gradient(left, #517802 0%,#5c8901 100%);
+	background: -o-linear-gradient(left, #517802 0%,#5c8901 100%);
+	background: -ms-linear-gradient(left, #517802 0%,#5c8901 100%);
+	background: linear-gradient(to right, #517802 0%,#5c8901 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#517802', endColorstr='#5c8901',GradientType=1 );
+}
+
+
+
+.credit{
+	width: 300px;
+	margin: 40px auto;
+	text-align: center;
+}
+
